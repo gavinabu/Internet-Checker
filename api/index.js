@@ -5,7 +5,8 @@ const app = express()
 app.use(cors({origin:"*"}))
 
 app.get("/",(req,res) => {
-  res.json(req)
+  console.log(req)
+  res.send("Hi")
 })
 
 app.get("/getTime",(req,res) => {
