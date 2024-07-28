@@ -6,7 +6,12 @@ app.use(cors({origin:"*"}))
 
 app.get("/",(req,res) => {
   console.log(req)
-  res.json(req.toArray())
+  res.json({
+    ip:req.ip,
+    ips:req.ips,
+    headers:req.headers,
+    rawheaders:req.rawheaders,
+  })
 })
 
 app.get("/getTime",(req,res) => {
