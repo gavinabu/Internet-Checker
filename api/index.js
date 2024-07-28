@@ -6,10 +6,11 @@ app.use(cors({origin:"*"}))
 
 app.get("/",(req,res) => {
   console.log(req)
-  res.send("Hi")
+  res.json(req.toArray())
 })
 
 app.get("/getTime",(req,res) => {
+  res.setHeader("Content-Type","text/plain")
   res.send(Date.now())
 })
 
